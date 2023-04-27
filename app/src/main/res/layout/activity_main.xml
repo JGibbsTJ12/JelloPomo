@@ -8,49 +8,26 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/startpausebttn"
-        android:layout_width="108dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="300dp"
-        android:backgroundTint="#49592A"
-        android:text="START"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/countdown_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginBottom="24dp"
         android:text="25:00"
         android:textColor="#cdd0c0 "
         android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/startpausebttn"
+        app:layout_constraintEnd_toStartOf="@+id/break2" />
 
-    <TextView
-        android:id="@+id/break2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="84dp"
-        android:text="Long Break"
-        android:textColor="#cdd0c0 "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/break1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="84dp"
-        android:text="Short Break"
-        android:textColor="#cdd0c0 "
+    <Button
+        android:id="@+id/startpausebttn"
+        android:layout_width="108dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#49592A"
+        android:text="START"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,26 +35,83 @@
         android:id="@+id/work"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginEnd="31dp"
         android:background="#6e8641"
         android:text="Work!"
         android:textColor="#cdd0c0 "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/break1"
+        app:layout_constraintEnd_toStartOf="@+id/break1" />
+
+    <TextView
+        android:id="@+id/break2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="75dp"
+        android:text="Long Break"
+        android:textColor="#cdd0c0 "
+        app:layout_constraintBaseline_toBaselineOf="@+id/break1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/break1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="63dp"
+        android:text="Short Break"
+        android:textColor="#cdd0c0 "
+        app:layout_constraintBottom_toTopOf="@+id/doroCount"
+        app:layout_constraintEnd_toStartOf="@+id/break2" />
 
     <Button
         android:id="@+id/skipbttn"
         android:layout_width="104dp"
         android:layout_height="0dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginBottom="168dp"
         android:backgroundTint="#49592a "
         android:text="SKIP"
         android:textSize="12sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/motd"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/countdown_text"
         tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/currenttask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Task"
+        android:textColor="#cdd0c0 "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skipbttn" />
+
+    <TextView
+        android:id="@+id/motd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#cdd0c0 "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/doroCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="27dp"
+        android:textAlignment="center"
+        android:textColor="#cdd0c0 "
+        app:layout_constraintBottom_toTopOf="@+id/countdown_text"
+        app:layout_constraintStart_toStartOf="@+id/countdown_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
